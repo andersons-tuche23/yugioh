@@ -41,7 +41,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   return {
     props: {
-      cards: cards.data.slice(0, 10),
+      cards: cards.data.slice(0, 20),
     },
   };
 };
