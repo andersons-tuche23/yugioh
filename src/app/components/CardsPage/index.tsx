@@ -1,5 +1,5 @@
-import { GetServerSideProps } from 'next';
-import { fetchCards } from '../../services/ygoprodeck';
+import { GetServerSideProps } from "next";
+import { fetchCards } from "../../services/ygoprodeck";
 
 interface Card {
   id: string;

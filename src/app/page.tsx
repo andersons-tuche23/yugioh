@@ -58,6 +58,11 @@ export default function Home() {
     handleFilterChange();
   }, [searchQuery, selectedType]);
 
+  const playSound = () => {
+    const audio = new Audio("/Sounds/som01.mp3"); 
+    audio.play();
+  };
+
   return (
     <>
       <Header />
@@ -84,7 +89,13 @@ export default function Home() {
           <h2>Cards Library</h2>
           <CardGrid>
             {filteredCards.map((card) => (
-              <CardItem key={card.id} onClick={() => setSelectedCard(card)}>
+              <CardItem
+              key={card.id}
+              onClick={() => {
+                setSelectedCard(card); 
+                playSound(); 
+              }}
+            >
                 <Image src={card.card_images[0]?.image_url} alt={card.name} />
                 <Title>{card.name}</Title>
               </CardItem>
